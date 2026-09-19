@@ -347,3 +347,504 @@ PHP 기반 MySQL / MariaDB / SQL Server 관리 도구
 🇰🇷 Korean · 🇺🇸 English
 
 ---
+
+------English version ------
+
+
+DBTool v3.1
+
+DBTool is a lightweight PHP-based web database management tool for managing MySQL, MariaDB, and Microsoft SQL Server databases through a web browser.
+
+DBTool supports Korean and English, and users can switch the language from both the login page and the main dashboard.
+
+---
+
+✨ Features
+
+🔐 Web Login
+
+- Administrator login
+- Add web users
+- Edit web users
+- Delete web users
+- Change user passwords
+- Administrator password change
+- Remember login
+- Session management
+- CSRF protection
+
+«Web login accounts and database accounts are managed separately.»
+
+---
+
+🌐 Multi-Language Support
+
+DBTool supports:
+
+- 🇰🇷 Korean
+- 🇺🇸 English
+
+The language can be changed from:
+
+- Login page
+- Main dashboard
+
+The selected language is stored in the browser and automatically restored when the user visits DBTool again.
+
+---
+
+🗄️ Database Management
+
+DBTool supports:
+
+- MySQL
+- MariaDB
+- Microsoft SQL Server
+
+Database Servers
+
+You can manage multiple database servers.
+
+- Add database server
+- Edit database server
+- Delete database server
+- Connect to database server
+- Save database connection information securely
+- Manage multiple database connections
+
+---
+
+📂 Database Management
+
+Available database operations include:
+
+- View databases
+- Create databases
+- Delete databases
+- Search databases
+- View database information
+- View database usage
+
+---
+
+📋 Table Management
+
+DBTool provides table management features including:
+
+- View tables
+- Search tables
+- View table data
+- Edit table rows
+- Delete table rows
+- Delete tables
+- Empty / truncate tables
+
+Wide database tables can be horizontally scrolled on mobile devices.
+
+---
+
+💻 SQL Console
+
+DBTool allows users to execute SQL statements directly.
+
+Features include:
+
+- SQL query input
+- SQL execution
+- Query result display
+- Database-specific SQL execution
+
+---
+
+⚙️ Events & Triggers
+
+Event Scheduler
+
+For supported database servers, DBTool provides Event Scheduler management.
+
+- View Event Scheduler status
+- Enable Event Scheduler
+- Disable Event Scheduler
+- View events
+- Create events
+- Delete events
+
+---
+
+Triggers
+
+Trigger management includes:
+
+- View triggers
+- Create triggers
+- Delete triggers
+
+---
+
+👤 Database Users
+
+DBTool can manage database server accounts separately from DBTool web accounts.
+
+Available functions may include:
+
+- View database users
+- Add database users
+- Delete database users
+- Manage database privileges
+
+«Database users are different from DBTool web users.»
+
+---
+
+📊 Statistics
+
+DBTool provides basic database and server information.
+
+Depending on the database server, information may include:
+
+- Database information
+- Table information
+- Database size
+- Server information
+- Connection information
+- Usage statistics
+
+---
+
+📱 Responsive Design
+
+DBTool is designed to work across different screen sizes.
+
+Supported devices include:
+
+- 💻 Desktop
+- 🖥️ Laptop
+- 📱 Mobile
+- 📲 Tablet
+
+The mobile interface includes a collapsible navigation sidebar.
+
+Large database tables can be horizontally scrolled on smaller screens.
+
+---
+
+🚀 Installation
+
+1. Download DBTool
+
+Download or clone this repository.
+
+Example:
+
+DBTool/
+├── dbtool.php
+├── recovery.php-disabled
+├── dbtool.key
+├── data/
+│   ├── config.php
+│   └── index.html
+└── README.md
+
+---
+
+2. Upload to Your Web Server
+
+Upload the DBTool files to a PHP-enabled web server.
+
+Example:
+
+public_html/
+├── dbtool.php
+├── recovery.php-disabled
+├── dbtool.key
+└── data/
+    ├── config.php
+    └── index.html
+
+---
+
+🧩 Requirements
+
+Recommended environment:
+
+- PHP 8.0 or newer
+- PHP PDO
+- PDO MySQL ("pdo_mysql")
+- PDO SQL Server ("pdo_sqlsrv") for Microsoft SQL Server
+- Sodium extension ("sodium")
+
+MySQL / MariaDB
+
+Make sure the following PHP extension is enabled:
+
+pdo_mysql
+
+Microsoft SQL Server
+
+Make sure the following PHP extension is enabled:
+
+pdo_sqlsrv
+
+---
+
+🔑 Default Login
+
+The initial administrator account is:
+
+Username: admin
+Password: admin
+
+For security reasons, change the default administrator password after the first login.
+
+---
+
+🔐 Recovery Code
+
+DBTool includes an administrator account recovery feature.
+
+The recovery page is disabled by default:
+
+recovery.php-disabled
+
+If administrator account recovery is required, rename it to:
+
+recovery.php
+
+Then open the recovery page and enter the Recovery Code.
+
+After recovery is complete, rename the file back:
+
+recovery.php
+
+to:
+
+recovery.php-disabled
+
+This prevents unnecessary exposure of the recovery page.
+
+---
+
+🔒 Security
+
+DBTool includes several security mechanisms.
+
+These include:
+
+- Password hashing
+- Session authentication
+- CSRF protection
+- Encrypted database passwords
+- Hashed Recovery Code
+- Login attempt protection
+- Recovery attempt protection
+
+Database passwords are encrypted before being stored by DBTool.
+
+The encryption key is stored in:
+
+dbtool.key
+
+Never share your production "dbtool.key" with other people.
+
+---
+
+⚠️ Important: "dbtool.key"
+
+DBTool v3.1 uses:
+
+dbtool.key
+
+This file contains the encryption key used to protect stored database credentials.
+
+If you are publishing DBTool on a public GitHub repository, do not upload your real production "dbtool.key".
+
+A recommended ".gitignore" configuration is:
+
+dbtool.key
+data/config.php
+
+You can provide a sample configuration separately and generate/use the real key on your production server.
+
+---
+
+📁 Project Structure
+
+DBTool/
+│
+├── dbtool.php
+├── recovery.php-disabled
+├── dbtool.key
+│
+├── data/
+│   ├── config.php
+│   └── index.html
+│
+└── README.md
+
+---
+
+🌍 Language Selection
+
+DBTool provides a language selector on the login page.
+
+Available languages:
+
+한국어
+English
+
+The language selector is also available on the main dashboard.
+
+The selected language is saved in the browser so that the same language can be restored automatically during the next visit.
+
+---
+
+🛠️ Example
+
+After uploading DBTool to your web server, open:
+
+https://example.com/dbtool.php
+
+Log in using your DBTool account.
+
+Then add a database server using information such as:
+
+Database Type
+Server
+Port
+Username
+Password
+
+After connecting to the database server, you can manage databases, tables, users, events, triggers, and SQL queries.
+
+---
+
+⚠️ Data Safety
+
+DBTool provides powerful database management functions.
+
+Always create a backup before performing destructive operations.
+
+The following operations may permanently delete data:
+
+- Delete database
+- Delete table
+- Truncate table
+- Delete rows
+- Delete database users
+
+Deleted data cannot be recovered through DBTool.
+
+---
+
+🔧 Troubleshooting
+
+Database connection fails
+
+Check the following:
+
+1. Database server address
+2. Database port
+3. Username
+4. Password
+5. Database server status
+6. PHP PDO extension
+7. Firewall settings
+8. Remote database access permissions
+
+---
+
+MySQL / MariaDB connection error
+
+Make sure:
+
+pdo_mysql
+
+is enabled in PHP.
+
+---
+
+SQL Server connection error
+
+Make sure:
+
+pdo_sqlsrv
+
+is installed and enabled.
+
+The Microsoft SQL Server driver may also require the appropriate Microsoft ODBC Driver.
+
+---
+
+Recovery page does not open
+
+Make sure the file has been renamed:
+
+recovery.php-disabled
+
+to:
+
+recovery.php
+
+After completing recovery, rename it back to:
+
+recovery.php-disabled
+
+---
+
+🤝 Contributing
+
+Contributions are welcome.
+
+You can contribute by:
+
+- Reporting bugs
+- Suggesting features
+- Improving translations
+- Improving documentation
+- Submitting pull requests
+- Improving security
+- Adding database support
+
+Please use GitHub Issues for bug reports and feature requests.
+
+---
+
+📮 Support
+
+If you find a bug or need help, please create an issue in this repository.
+
+When reporting a problem, include:
+
+- PHP version
+- Database type
+- Database version
+- Operating system
+- Error message
+- Steps to reproduce the problem
+
+Never post passwords, database credentials, "dbtool.key", or other sensitive information in an issue.
+
+---
+
+📜 License
+
+See the "LICENSE" file in this repository for licensing information.
+
+---
+
+⭐ DBTool v3.1
+
+A lightweight PHP database management tool.
+
+Supported databases
+
+MySQL
+MariaDB
+Microsoft SQL Server
+
+Languages
+
+🇰🇷 Korean
+🇺🇸 English
+
+Made for simple and convenient database management through a web browser.
