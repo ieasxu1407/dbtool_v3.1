@@ -1,7 +1,4 @@
 
-[![GitHub stars](https://shields.io)](https://github.com)
-
-
 DBTool v3.1
 
 DBTool is a lightweight PHP-based web database management tool for managing MySQL, MariaDB, and Microsoft SQL Server databases through a web browser.
